@@ -2,7 +2,7 @@
 
 /* Magic Mirror
  * Module: MMM-SystemStats
- * Modified by Leonardo Kunar
+ *
  * By Benjamin Roesner http://benjaminroesner.com
  * MIT Licensed.
  */
@@ -53,7 +53,7 @@ module.exports = NodeHelper.create({
       async.apply(exec, "free | awk '/^Mem:/ {print $4*100/$2}'"),
       // get Wifi signal Quality
       //async.apply(exec, 'cat /home/pi/fi_q'),
-      async.apply(exec, "/sbin/iwlist wlan0 scan | sed -e 's/^[ \t]*//'|awk -F '/' '/Quality=/ {print $1}'"),
+      async.apply(exec, "/sbin/iwconfig wlan0 | sed -e 's/^[ \t]*//'|awk -F '/' '/Quality=/ {print $1}'"),
       // get uptime
       async.apply(exec, 'cat /proc/uptime'),
 
@@ -76,7 +76,7 @@ module.exports = NodeHelper.create({
   },
 
   formatWiFi: function(qwifi) {
-    return qwifi.replace('Quality=','')
+    return qwifi.replace('Link Quality=','')
   },
 
   // http://unix.stackexchange.com/questions/69185/getting-cpu-usage-same-every-time/69194#69194
