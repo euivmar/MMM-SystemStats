@@ -3,7 +3,8 @@
 /* Magic Mirror
  * Module: MMM-SystemStats
  *
- * By Benjamin Roesner http://benjaminroesner.com
+ * originally by Benjamin Roesner http://benjaminroesner.com
+ * modified by Eugenio Ivorra  
  * MIT Licensed.
  */
 
@@ -45,7 +46,7 @@ module.exports = NodeHelper.create({
 
     async.parallel([
       // get cpu temp
-      async.apply(exec, '/opt/vc/bin/vcgencmd measure_temp'),
+      async.apply(exec, "cat /sys/devices/virtual/thermal/thermal_zone1/temp | awk '{usage=($1/1000)} END {print usage}'"),
       // get system load
       //async.apply(exec, 'cat /proc/loadavg'),
       async.apply(exec, "grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}'"),
