@@ -4,7 +4,7 @@ This [MagicMirror](https://github.com/MichMich/MagicMirror) modules, shows the p
 ![Magic-Mirror Module MMM-SystemStats screenshot](https://raw.githubusercontent.com/leonardokunar/MMM-SystemStats/master/screenshot.png)
 
 Tested with:
-- Raspberry Pi
+- JETSON NANO
 
 ## Dependencies
 - An installation of [MagicMirror<sup>2</sup>](https://github.com/MichMich/MagicMirror)
