@@ -20,7 +20,7 @@ cd ~/MagicMirror/modules
 
 Clone this repository:
 ```
-git clone https://github.com/leonardokunar/MMM-SystemStats
+git clone https://github.com/euivmar/MMM-SystemStats
 ```
 
 Navigate to the new `MMM-SystemStats` folder and install the node dependencies.
